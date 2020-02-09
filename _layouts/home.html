@@ -23,23 +23,21 @@ layout: default
     </div>
     <div class="post-description">
       <p>
-        {{ post.excerpt }}
+        {{ post.description }}
       </p>
     </div>
     <div class="post-tags">
       {%- if post.tags.size > 0 -%}
       <p>
-        Tags:&nbsp;
+        Tags: 
       </p>
-      <ul>
-        {% for tag in post.tags %}
-        <li>{{ tag }}</li>
-        {% endfor %}
-      </ul>
+      {%- for tag in post.tags -%}
+      {%- capture tag_name %}{{ tag }}{% endcapture -%}
+      {%- capture tag_url %}{{ tag | prepend: "/tag/"  }}{% endcapture -%}
+      <a href="{{ tag_url | relative_url }}">{{ tag_name }}&nbsp;</a>
+      {%- endfor -%}
       {%- endif -%}
     </div>
   </div>
   {%- endfor -%}
-
-  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
 </section>

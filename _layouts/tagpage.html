@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ "/assets/css/tags.css" | relative_url }}">
+{%- assign date_format = "%-d %b, %Y" -%}
+
+<div class="tags">
+  <h2>Tag: {{ page.tag }}</h2>
+  <ul>
+    {%- for post in site.tags[page.tag] -%}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{ post.date | date: date_format }})<br>
+      {{ post.description }}
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

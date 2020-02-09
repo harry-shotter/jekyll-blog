@@ -1,0 +1,16 @@
+.tags {
+    grid-area: content;
+    background-color: #FFF;
+    border: 1px #EEEEEE solid;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.tags li a {
+    font-weight: bold;
+}
+
+.tags li {
+    margin: 5px 0px;
+}
