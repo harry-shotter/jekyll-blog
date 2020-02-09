@@ -1,0 +1,83 @@
+.posts {
+    grid-area: content;
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(400px, 1fr);
+}
+
+@media (min-width: 1200px) {
+    .posts {
+        margin-right: 20px;
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+    }
+}
+
+@media (min-width: 1575px) {
+    .posts {
+        grid-template-columns: repeat(3, minmax(400px, 1fr));
+    }
+}
+
+.posts ul {
+    grid-template-columns: repeat(4 600px);
+}
+
+.post {
+    background-color: #FFF;
+    border: 1px #EEEEEE solid;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-rows: 40px 30px 1fr 20px;
+    grid-template-areas: "post-title""post-info""post-description""post-tags";
+    grid-gap: 5px;
+}
+
+.post-title {
+    grid-area: post-title;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.post-title h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-info {
+    font-size: 0.9rem;
+    grid-area: post-info;
+}
+
+.post-description {
+    font-size: 0.9rem;
+    grid-area: post-description;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-tags {
+    font-size: 0.9rem;
+    grid-area: post-tags;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.post-tags p {
+    display: inline;
+}
+
+.post-tags ul {
+    display: inline;
+    padding-left: 0px;
+}
+
+.post-tags li {
+    display: inline;
+    padding-right: 13px;
+}
