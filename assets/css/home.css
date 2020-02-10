@@ -29,9 +29,8 @@
     margin: 10px;
     padding: 10px;
     overflow: hidden;
-
     display: grid;
-    grid-template-rows: 40px 30px 1fr 20px;
+    grid-template-rows: 45px 30px 1fr 20px;
     grid-template-areas: "post-title""post-info""post-description""post-tags";
     grid-gap: 5px;
 }
@@ -40,6 +39,10 @@
     grid-area: post-title;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.post-title a {
+    color: #000;
 }
 
 .post-title h3 {
@@ -62,7 +65,6 @@
 .post-tags {
     font-size: 0.9rem;
     grid-area: post-tags;
-
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
