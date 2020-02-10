@@ -6,7 +6,7 @@ html {
 
 a {
     text-decoration: none;
-    color: #040F0F;
+    color: #008ABE;
     transition: 0.2s;
 }
 
@@ -25,7 +25,7 @@ a:hover, .muted a:hover {
 }
 
 .muted {
-    color: #B3B6B7;
+    color: #939596;
 }
 
 h1 {
