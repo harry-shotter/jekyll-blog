@@ -15,6 +15,7 @@ body {
     align-content: stretch;
     grid-template-rows: auto auto;
     grid-template-areas: "header""content";
+    grid-template-columns: minmax(320px, 750px);
     margin: auto;
     max-width: 1920px;
 }
