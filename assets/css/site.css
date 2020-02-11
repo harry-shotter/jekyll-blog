@@ -75,3 +75,7 @@ header img {
         margin: auto;
     }
 }
+
+.highlight pre{
+  white-space: pre-wrap;
+}
