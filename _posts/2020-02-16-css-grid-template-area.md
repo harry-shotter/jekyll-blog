@@ -58,16 +58,15 @@ That, creates this:
 Easy!
 
 ## Standard Web Layout
-When using Template Areas for more complex pages this syntax becomes even easier to understand in my opinion; I personally like the visual aspect of seeing named areas rather than a the usual `grid-row: 1 / span 2` etc. syntax  
+When using Template Areas for more complex pages this syntax becomes even easier to understand in my opinion; I personally like the visual aspect of seeing named areas rather than the usual `grid-row: 1 / span 2` etc. syntax  
 
-So, what are we going to be creating?
+So, here's the layout I'm going to be creating:
 
 ![basic grid]({{ "/assets/images/posts/css-grid-template-areas/page-layout.png" | relative_url }})
 
 You can see this is split into 5 main sections: Nav, Header, Main, Side, and Footer. I'd say this is typical of a website layout and one that could be awkward to implement using the usual CSS tricks.
 
 This is how simple it is with CSS Grid & Template Areas: 
-
 
 {% highlight html %}
 <style>
@@ -113,7 +112,7 @@ This is how simple it is with CSS Grid & Template Areas:
 </div>
 {% endhighlight %}
  
-Let's break the CSS down, the first line `display: grid;` tells the browser that this div and its children will be using a grid layout (specifically a block level grid). Next, we have the grid definition which can be split into two parts: defining the row and column sizes and defining the grid areas.
+Let's break the CSS down, the first line `display: grid;` tells the browser that this div and its children will be using a grid layout (specifically a block level grid). Next, we have the grid definition which can be split into two parts: defining the row and column sizes and, defining the grid areas.
 
 Looking at the row and column definitions:
 
@@ -122,7 +121,7 @@ Looking at the row and column definitions:
     grid-template-columns: 200px 1fr 300px;
 {% endhighlight %}
 
-This is creating 3 rows and 3 columns, all different sizes, by using `1fr` we're telling the browser that this row/column should take up 1 fraction of the remaining space; in this case that would be any remaining space. If we had defined a row like this: `1fr 1fr 1fr` it would create 3 evenly distributed rows.
+This is creating 3 rows and 3 columns, all different sizes. By using `1fr` we're telling the browser that this row/column should take up 1 fraction of the remaining space; in this case that would be all remaining space. If we had defined a row `1fr 1fr 1fr` it would create 3 evenly distributed rows.
 
 Next, the template area definition: 
 
@@ -132,7 +131,7 @@ Next, the template area definition:
                          "nav footer footer";
 {% endhighlight %}
 
-This is visually laying out where each section of our page will fit in the previously defined grid. Each string is a single row; the first row `"nav header header"` is stating that the first column will be taken by the `nav` area and the last two columns will be used by the `header` area, the second row being `"nav main side"` is stating that the `nav` area will continue to the second row and the `main` and `side` areas will take up one cell each. 
+This is visually mapping where each section of our page will fit in the previously defined grid. Each string is a single row; the first row `"nav header header"` is stating that the first column will be taken by the `nav` area and the last two columns will be used by the `header` area, the second row being `"nav main side"` is stating that the `nav` area will continue to the second row and the `main` and `side` areas will take up one cell each. 
 
 I've chucked a `grid-gap: 10px;` in there to help with the layout, this just adds some space between each cell.
 
@@ -169,6 +168,6 @@ Just a little side note here: CSS Grid is responsive! With a few media tags you 
 {% endhighlight %}
 
 ## Go and play!
-While I haven't gone into great detail regarding CSS Grid and all of its possibilities, I hope this has been helpful in showing you just how easy it is to use and how much it can help you when designing a web page and motivated you to start using CSS grid. I personally will be using this primarily moving forwards, though I will have to get to grips with the polyfills to support IE 11 🙄. 
+While I haven't gone into great detail regarding CSS Grid and all of its possibilities, I hope this has been helpful in showing you just how much it can help you when designing a web page and motivated you to start using CSS grid. Once I've got to grips with the polfills to support IE 11 🙄, I will be using this a lot more.
 
 If you want to learn more about CSS Grid, and what it can do for you, I'd recommened looking [here](https://css-tricks.com/snippets/css/complete-guide-grid/).
