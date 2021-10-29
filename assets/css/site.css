@@ -37,7 +37,7 @@ header {
     padding: 10px;
     grid-area: header;
     justify-self: center;
-    align-self: center;
+    /* align-self: center; */
     text-align: center;
 }
 
@@ -52,7 +52,7 @@ header {
             top: 20%;
             left: auto;
             margin-left: 20px;
-            position: fixed;
+            /* position: fixed; */
         }
     }
 }
